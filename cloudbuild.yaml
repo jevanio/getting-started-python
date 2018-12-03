@@ -2,9 +2,9 @@ steps:
 # - name: 'gcr.io/cloud-builders/gcloud'
 #   args: ['app', 'deploy', '2-structured-data/app.yaml']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/poc-ci-cd/bookshelf:latest','optional-kubernetes-engine/']
+  args: ['build', '-t', 'gcr.io/poc-ci-cd/bookshelf','optional-kubernetes-engine/']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/poc-ci-cd/bookshelf:latest']
+  args: ['push','gcr.io/poc-ci-cd/bookshelf']
 # - name: 'gcr.io/cloud-builders/kubectl'
 #   args: ['delete','deployments','bookshelf-frontend']
 #   env:
