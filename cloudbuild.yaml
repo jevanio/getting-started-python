@@ -6,7 +6,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','gcr.io/poc-ci-cd/bookshelf']
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['delete','deployments','optional-kubernetes-engine/bookshelf-frontend']
+  args: ['delete','deployments','bookshelf-frontend']
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
