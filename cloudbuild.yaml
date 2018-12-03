@@ -11,7 +11,7 @@ steps:
 #     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
 #     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set','image','deployment/bookshelf-frontend','bookshelf=gcr.io/poc-ci-cd/bookshelf']
+  args: ['set','image','deployment/bookshelf','bookshelf-frontend=gcr.io/poc-ci-cd/bookshelf']
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
