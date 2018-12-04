@@ -20,6 +20,21 @@ steps:
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply','-f','optional-kubernetes-engine/bookshelf-frontend.yaml']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply','-f','optional-kubernetes-engine/bookshelf-worker.yaml']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply','-f','optional-kubernetes-engine/bookshelf-service.yaml']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
 # - name: 'gcr.io/cloud-builders/kubectl'
 #   args: ['set','image','deployment/bookshelf-frontend','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
 #   env:
