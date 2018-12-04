@@ -1,10 +1,12 @@
 steps:
-# - name: 'gcr.io/cloud-builders/gcloud'
-#   args: ['app', 'deploy', '2-structured-data/app.yaml']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/poc-ci-cd/bookshelf:latest','optional-kubernetes-engine/']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/poc-ci-cd/bookshelf:latest']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', '2-structured-data/app.yaml']
+
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/poc-ci-cd/bookshelf:latest','optional-kubernetes-engine/']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push','gcr.io/poc-ci-cd/bookshelf:latest']
+
 # - name: 'gcr.io/cloud-builders/kubectl'
 #   args: ['apply','-f','optional-kubernetes-engine/bookshelf-frontend.yaml']
 #   env:
@@ -35,23 +37,24 @@ steps:
 #   env:
 #     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
 #     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set','image','deployment/bookshelf-frontend','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set','image','deployment/bookshelf-worker','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set','image','deployment/bookshelf-frontend','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set','image','deployment/bookshelf-worker','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: ['set','image','deployment/bookshelf-frontend','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
+#   env:
+#     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+#     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: ['set','image','deployment/bookshelf-worker','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
+#   env:
+#     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+#     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: ['set','image','deployment/bookshelf-frontend','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
+#   env:
+#     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+#     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: ['set','image','deployment/bookshelf-worker','bookshelf-app=gcr.io/poc-ci-cd/bookshelf:latest']
+#   env:
+#     - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+#     - 'CLOUDSDK_CONTAINER_CLUSTER=bookshelf'
