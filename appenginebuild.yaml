@@ -1,5 +1,5 @@
 steps:
-- name: 'ubuntu'
-  args: ['python','2-structured-data/tests/test_crud.py']
+- name: 'gcr.io/google-appengine/python'
+  args: ['2-structured-data/tests/test_crud.py']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', '2-structured-data/app.yaml']
