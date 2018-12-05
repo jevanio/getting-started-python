@@ -1,5 +1,3 @@
 steps:
-- name: 'gcr.io/google-appengine/python'
-  args: ['2-structured-data/tests/conftest.py']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', '2-structured-data/app.yaml']
